@@ -1,0 +1,137 @@
+\documentclass[12pt, titlepage]{article}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb, amsmath}
+\usepackage{bm}
+\usepackage{color}
+\usepackage[unicode]{hyperref}
+\usepackage{url}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=blue,
+    linkcolor=blue,
+    urlcolor=blue
+}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{listings}
+\usepackage{float}
+\def\sgn{\operatorname{sgn}}
+\title{Report of bachelor thesis}
+\date{Listopad 22, 2015}
+\author{Radek Bartyzal}
+
+\begin{document}
+\begin{titlepage}
+    \centering
+
+        
+    {\bfseries\huge 
+    MI-GLR Homework 5\\}
+    \smallskip
+\smallskip
+\smallskip
+  
+    \vskip1cm
+        
+    {\bfseries\large 
+    Radek Bartyzal (bartyrad)\\
+    }    
+    \vskip1cm
+    {\bfseries\large 
+    12. 5. 2018 \\
+    }
+    \vfill
+    \begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.20]{logo}
+    \end{figure}
+
+    
+    \vfill
+\end{titlepage}
+
+\section{Problem 1: Nash Equilibrium}
+\begin{center}
+\begin{tabular}[c]{|c|c|}
+\hline 
+\textbf{3,2} & 1,1 \\ 
+\hline 
+0,0 & \textbf{2,3} \\ 
+\hline 
+\end{tabular} 
+\end{center} 
+
+Nash Equilibria are in \textbf{Bold}.
+\vskip1cm
+
+\textbf{Mixed Nash Equilibria:}
+
+Player 1 plays first action with probability $p1$:
+
+Reward for Player 2:
+
+\begin{gather*} 
+2*p1 + 0*(1-p1) = p1 + 3*(1-p1) \\
+2*p1 = -2*p1 + 3 \\
+4*p1 = 3 \\
+p1 = \frac{3}{4}
+\end{gather*}
+
+$\implies$ Strategy for Player 1: ($\frac{3}{4}$, $\frac{1}{4})$.
+
+\vskip1cm
+
+Player 2 plays first action with probability $p2$:
+
+Reward for Player 1:
+
+\begin{gather*} 
+3*p2 + 1*(1-p2) = 0*p2 + 2*(1-p2) \\
+2*p2 + 1 = 2 - 2*p2 \\
+4*p2 = 1 \\
+p2 = \frac{1}{4}
+\end{gather*}
+
+$\implies$ Strategy for Player 2: ($\frac{1}{4}$, $\frac{3}{4})$.
+
+
+\section{Problem 2: Maxmin and minmax}
+\begin {table}[H]
+\begin{center}
+\begin{tabular}[c]{|c|c|}
+\hline 
+1 & 2 \\ 
+\hline 
+0 & x \\ 
+\hline 
+\end{tabular} 
+\end{center}
+\caption{Matrix A of a zero-sum game.}
+\end {table}
+
+If some entry $a_{ij}$ of the matrix A has the property that:
+
+\begin{enumerate}
+\item $a_{ij}$ is the minimum of the $i$th row and
+\item $a_{ij}$ is the maximum of the $j$th column
+\end{enumerate}
+
+then we say $a_{ij}$ is a saddle point. If $a_{ij}$ is a saddle point, then Player I can then win at
+least $a_{ij}$ by choosing row $i$, and Player II can keep her loss to at most $a_{ij}$ by choosing
+column $j$. Hence $a_{ij}$ is the \textbf{value of the game}. Optimal strategy for Player I is to always play action $i$ and for Player II it is to always play action $j$. 
+
+\vskip1cm
+
+\textbf{Solution:}\\
+Saddle point is $a_{11}$, therefore value of the game is 1 and optimal strategy for both players is the following pure strategy: (1, 0).
+
+
+\begin{thebibliography}{0}
+  \bibitem[1]{cit:gt} Ferguson, S. Thomas "GAME THEORY" UCLA Department of Mathematics. Accessible from: \url{https://www.math.ucla.edu/~tom/Game_Theory/mat.pdf}
+
+  
+\end{thebibliography}
+
+\end{document}
